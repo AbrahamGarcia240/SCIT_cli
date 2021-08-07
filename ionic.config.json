@@ -1,0 +1,7 @@
+{
+  "name": "SCIT_cli",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

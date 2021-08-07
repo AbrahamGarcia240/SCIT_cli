@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "SCIT_cli",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
