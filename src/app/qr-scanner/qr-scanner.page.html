@@ -1,0 +1,27 @@
+<!-- Copyright (c) 2021, SCIT. All rights reserved -->
+<!-- 
+  NAME
+    qr-scanner.page.html
+
+  DESCRIPTION
+    This is the structure of the QR scanner page.
+
+  NOTES
+    This page is meant to be the UI for the QR scanner
+
+  MODIFIED   (MM/DD/YY)
+  abgarcia    08/07/21 - Creation
+ -->
+ 
+<!-- Hide the header once we are scanning -->
+<ion-header [hidden]="scan_active">
+  <ion-toolbar>
+    <ion-title>Please scan the provided QR code</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Set the ion content transparent if the scanner is active -->
+<ion-content [style.--background]="scan_active ? '#00000000': '#fff'"> 
+  <!-- Add the scan box only if the scan is active -->
+  <div class="scan-box" [hidden]="!scan_active"></div>
+</ion-content>

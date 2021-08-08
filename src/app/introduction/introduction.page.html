@@ -1,0 +1,110 @@
+<!-- Copyright (c) 2021, SCIT. All rights reserved -->
+<!-- 
+  NAME
+    introduction.page.html
+
+  DESCRIPTION
+    This is the structure of the introduction page.
+
+  NOTES
+    This page is meant to include slides explaining the basic functionallities
+    of the system to the user
+
+  MODIFIED   (MM/DD/YY)
+  abgarcia    08/07/21 - Creation
+ -->
+
+<!-- Start of the content -->
+<ion-content fullscreen class="ion-padding" scroll-y="false">
+  <!-- Create a container keeping all the slides, with pager we ensure the -->
+  <!-- behavior is like an app welcoming -->
+  <ion-slides pager="true">
+    <!-- SLIDE 1: Welcome -->
+    <ion-slide>
+      <div class="slide">
+        <!-- Line breaks to center the image -->
+        <br>
+        <br>
+        <!-- Content -->
+        <img src="../assets/introduction/img/slide_1.svg" alt="" srcset="">
+        <h2>Welcome!!</h2>
+        <p>This tutorial will guide you so you can start using the
+           <b>SCIT manager app</b> in no time. Let us show you some of the cool
+           things you can do
+        </p>
+        <!-- Button to go to next slide -->
+        <ion-button fill="clear" (click)="next_slide()">
+          Continue<ion-icon slot="end" name="arrow-forward"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-slide>
+
+    <!-- SLIDE 2: Meetings -->
+    <ion-slide>
+      <div class="slide">
+        <!-- Line breaks to center the image -->
+        <br>
+        <br>
+        <!-- Content -->
+        <img src="../assets/introduction/img/slide_2.svg" alt="" srcset="">
+        <h2>Coordinate like a PRO</h2>
+        <p>Never miss a repair meeting again, SCIT will track of your agenda
+           and help you to get organized while performing your tasks
+        </p>
+      </div>
+    </ion-slide>
+
+    <!-- SLIDE 3: Spendings -->
+    <ion-slide>
+      <div class="slide">
+        <!-- Line breaks to center the image -->
+        <br>
+        <br>
+        <!-- Content -->
+        <img src="../assets/introduction/img/slide_3.svg" alt="" srcset="">
+        <h2>Keep track of your money</h2>
+        <p>Generate periodic reports with your spendings and earnings
+        </p>
+      </div>
+    </ion-slide>
+  
+    <!-- SLIDE 4: Communicate -->
+    <ion-slide>
+      <div class="slide">
+        <!-- Line breaks to center the image -->
+        <br>
+        <br>
+        <!-- Content -->
+        <img src="../assets/introduction/img/slide_4.svg" alt="" srcset="">
+        <h2>Keep in touch</h2>
+        <p>Communicate with your manager, team mates and clients, keep track of
+          all your communications in one place</p>
+      </div>
+    </ion-slide>
+    <!-- End of slides -->
+
+    <!-- SLIDE 5: Start -->
+    <ion-slide>
+      <div class="slide">
+        <!-- Line breaks to center the image -->
+        <br>
+        <br>
+        <!-- Content -->
+        <img src="../assets/introduction/img/slide_5.svg" alt="" srcset="">
+        <h2>Let's get started!</h2>
+        <p>Tell us about you</p>
+        <!-- Buttons to classify the user, use "block" to use all available -->
+        <!-- spacing -->
+        <!-- $$$TODO: Add manager login logic -->
+        <ion-button expand="block" color="primary">
+          I am managing a team
+        </ion-button>
+        <!-- If the user is a Technitian, start the QR scanner -->
+        <ion-button expand="block" color="secondary" (click)="open_qr_page()">
+          I am part of a team..
+        </ion-button>
+      </div>
+    </ion-slide>
+    <!-- End of slides -->
+  </ion-slides>
+</ion-content>

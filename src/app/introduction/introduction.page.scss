@@ -1,0 +1,35 @@
+/*
+  NAME
+    introduction.page.scss
+
+  DESCRIPTION
+    Style sheet for the introduction page
+
+  NOTES:
+    PLEASE COMMENT WHY EACH PROPERTY IS ADDED
+
+  MODIFIED   (MM/DD/YY)
+  abgarcia    08/07/21 - Creation
+*/
+
+// Height so that the dot indexing each slide does not invades the space of
+// the actual slide
+ion-slides {
+  height: 100%;
+}
+
+// Places the image slighty on the top of the app with certain space
+.swiper-slide {
+  display: block;
+}
+
+// The dot (slider) is positionet to the bottom of the page
+.swiper-slide h2 {
+  margin-top: 2.8rem;
+}
+
+// Fix all image sizes
+img {
+  width: 250px;
+  height: 250px;
+}
