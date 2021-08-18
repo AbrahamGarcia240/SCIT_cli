@@ -1,0 +1,11 @@
+Run:
+  ionic serve
+
+Compile
+  ionic cap run android
+
+Log
+  Ctrl + L + Ctrl + L
+
+Use devtools to see console.log
+chrome://inspect/#devices

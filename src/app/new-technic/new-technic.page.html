@@ -14,12 +14,130 @@
  -->
 
 
-<ion-header>
+<!-- Header of the page -->
+ <ion-header>
   <ion-toolbar>
-    <ion-title>new_technic</ion-title>
+    <ion-title>Welcome aboard {{ tech_user_data.name }}!</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!-- Content of the page -->
 <ion-content>
-  <p class="ion-text-center">{{ tech_user_data.name }}</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2>Can you tell us more about you?</h2>
+      </ion-col>
+    </ion-row>
+    <br>
+    <br>
+    <ion-row>
+      <!-- Place the image in the center -->
+      <ion-col>
+        <img src="../assets/new-technic/img/icon_1.svg" alt="" srcset="">
+      </ion-col>
+    </ion-row>    
+  </ion-grid>
+
+  <!-- Start of the form -->
+  <ion-list>
+    <form action="">
+      <!-- Name -->
+      <ion-item>
+        <ion-label position='floating'>
+          First name
+        </ion-label>
+        <ion-input type='text' value="{{ tech_user_data.name }}"></ion-input>
+      </ion-item>
+
+      <!-- Email -->
+      <ion-item>
+        <ion-label position='floating'>
+          Email
+        </ion-label>
+        <ion-input type='email' inputmode="email" pattern="email"></ion-input>
+      </ion-item>
+
+      <!-- Phone number -->
+      <ion-item>
+        <ion-label position='floating'>
+          Mobile phone number
+        </ion-label>
+        <!-- Display the phone number if available -->
+        <ion-input type='tel' inputmode="tel" 
+          pattern="tel" *ngIf="sim_data; else elseBlock" 
+          value="{{ sim_data.phoneNumber }}"></ion-input>
+        <ng-template #elseBlock>Mobile phone number</ng-template>
+      </ion-item>
+
+      <!-- Role -->
+      <ion-list>
+        <ion-item>
+          <ion-label>Role</ion-label>
+          <ion-select value="{{ tech_user_data.role }}" 
+            okText="Okay" cancelText="Dismiss">
+            <ion-select-option value="Electric">Electric</ion-select-option>
+            <ion-select-option value="Cable">Cable</ion-select-option>
+            <ion-select-option value="Mechanic">Mechanic</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <!-- Calle -->
+      <ion-item>
+        <ion-label position='floating'>
+          Street
+        </ion-label>
+        <!-- Only print this if we have got the reversed geocode, see the -->
+        <!-- notes at get_address_str for more information -->
+        <ion-input type='text' *ngIf="address_object" 
+          value="{{address_object.thoroughfare}}"></ion-input>
+      </ion-item>
+
+      <!-- Numero -->
+      <ion-item>
+        <ion-label position='floating'>
+          Numero
+        </ion-label>
+        <!-- Only print this if we have got the reversed geocode, see the -->
+        <!-- notes at get_address_str for more information -->
+        <ion-input type='text' *ngIf="address_object" 
+          value="{{address_object.subThoroughfare}}"></ion-input>
+      </ion-item>
+
+      <!-- Sub Localitly -->
+      <ion-item>
+        <ion-label position='floating'>
+          Sub Localitly
+        </ion-label>
+        <!-- Only print this if we have got the reversed geocode, see the -->
+        <!-- notes at get_address_str for more information -->
+        <ion-input type='text' *ngIf="address_object" 
+          value="{{address_object.subLocality}}"></ion-input>
+      </ion-item>
+
+      <!-- City -->
+      <ion-item>
+        <ion-label position='floating'>
+          City
+        </ion-label>
+        <!-- Only print this if we have got the reversed geocode, see the -->
+        <!-- notes at get_address_str for more information -->
+        <ion-input type='text' *ngIf="address_object" 
+          value="{{address_object.locality}}"></ion-input>
+      </ion-item>
+
+      <!-- Country -->
+      <ion-item>
+        <ion-label position='floating'>
+          Country
+        </ion-label>
+        <!-- Only print this if we have got the reversed geocode, see the -->
+        <!-- notes at get_address_str for more information -->
+        <ion-input type='text' *ngIf="address_object" 
+          value="{{address_object.countryName}}"></ion-input>
+      </ion-item>
+
+    </form>
+  </ion-list>
 </ion-content>

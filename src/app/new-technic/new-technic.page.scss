@@ -1,0 +1,21 @@
+/*
+  NAME
+    new-technic.page.scss
+
+  DESCRIPTION
+    Style sheet for the new-technic page
+
+  NOTES:
+    PLEASE COMMENT WHY EACH PROPERTY IS ADDED
+
+  MODIFIED   (MM/DD/YY)
+  abgarcia    08/17/21 - Creation
+*/
+
+// Fix all image sizes
+img{
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  display: block;
+}

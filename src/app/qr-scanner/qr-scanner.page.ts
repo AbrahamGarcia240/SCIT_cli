@@ -161,6 +161,7 @@ export class QrScannerPage implements OnInit {
       // Set the scanner active to false
       this.scan_active = false;
       this.router.navigate(['/new-technic']);
+      
     }
   }
 
